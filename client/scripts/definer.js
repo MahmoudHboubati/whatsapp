@@ -16,7 +16,6 @@ export default class Definer {
             Entity.$inject = Entity.$inject || [];
 
             if (proto instanceof Entities.Controller) {
-                console.log('definer ');
                 this._defineController(Entity);
             } else if (proto instanceof Entities.Provider)
                 this._defineProvider(Entity);

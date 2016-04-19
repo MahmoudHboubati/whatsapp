@@ -5,16 +5,18 @@ export default class ChatsCtrl extends Controller {
     constructor() {
         super(...arguments);
 
+        console.error('in Chats controller constructor');
+
         this.helpers({
-          data() {
-            return Chats.find();
-          }
+            data() {
+                return Chats.find();
+            }
         });
 
         this.remove = function(chat) {
-          this.data.remove(chat);
+            this.data.remove(chat);
         }
     }
 }
 
-ChatsCtrl.$inject = ['$scope'];
+ChatsCtrl.$inject = ['$scope', '$log'];
